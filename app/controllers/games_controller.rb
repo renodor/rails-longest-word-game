@@ -12,13 +12,15 @@ class GamesController < ApplicationController
     @grid = params['grid'].downcase
 
     if !english_word?(@word)
-      @result = 1
+      @result = "Sorry but #{@word} is not an english word"
     elsif !word_in_grid?(@word, @grid)
-      @result = 2
+      @result = "Sorry but #{@word} can't be build out of #{params['grid'].chars.join(', ')}"
     else
-      @result = 3
+      @result = 'Well done buddy'
     end
   end
+
+  private
 
   def word_in_grid?(word, grid)
     grid_arr = grid.split('')
