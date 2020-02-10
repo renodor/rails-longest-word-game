@@ -1,0 +1,16 @@
+<h1>Result</h1>
+
+<p>Your word: <%= params['word'] %></p>
+
+<% if @result == 1 %>
+  <p>Sorry but <%= @word %> is not an english word</p>
+<% elsif @result == 2 %>
+  <p>Sorry but <%= @word %> can't be build out of <%= params['grid'] %></p>
+<% else %>
+  <p>Well done buddy</p>
+<% end %>
+
+<p>
+  <%= link_to "Play again", new_path %>
+</p>
+

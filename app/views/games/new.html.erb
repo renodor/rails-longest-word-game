@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>New Game</h1>
+  <ul class="inline-list">
+    <% @letters.each do |letter| %>
+        <li><%= letter %></li>
+    <% end %>
+  </ul>
+
+  <form class="my-form" action="/score"  method="post">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    <input id="letters" name="grid" type="hidden" value="<%= @letters.join('') %>" />
+    <input type="text" name="word" class="form-control" placeholder="What is the Longest Word you can Find?"><button type="submit" class="btn btn-primary mb-2">Play!</button>
+  </form>
+</div>
+
+
+
+
