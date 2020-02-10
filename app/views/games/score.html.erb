@@ -5,7 +5,7 @@
 <% if @result == 1 %>
   <p>Sorry but <%= @word %> is not an english word</p>
 <% elsif @result == 2 %>
-  <p>Sorry but <%= @word %> can't be build out of <%= params['grid'] %></p>
+  <p>Sorry but <%= @word %> can't be build out of <%= params['grid'].chars.join(', ') %></p>
 <% else %>
   <p>Well done buddy</p>
 <% end %>
