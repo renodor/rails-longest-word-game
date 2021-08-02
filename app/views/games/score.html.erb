@@ -1,0 +1,9 @@
+<h1>Games#score</h1>
+
+<% if !@is_from_original_grid %>
+  <p>Word has not been built from the grid</p>
+<% elsif !@is_an_english_word %>
+  <p>Word is not an english word</p>
+<% else %>
+  <p>All good
+<% end %>
